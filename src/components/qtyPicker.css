@@ -1,0 +1,14 @@
+.flexBox{
+    display: flex;
+    justify-content: center;
+}
+.qtyPicker{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+}
+.qtyPicker button{
+    width: 25px;
+    height: 25px;
+}

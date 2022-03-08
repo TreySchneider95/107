@@ -1,0 +1,7 @@
+.product{
+    border: solid black 1px;
+    margin: 18px;
+    padding: 12px;
+    background-color: rgb(194, 235, 245);
+    border-radius: 18px;
+}
