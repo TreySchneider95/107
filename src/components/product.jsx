@@ -1,15 +1,17 @@
 import './product.css'
 import QtyPicker from './qtyPicker';
+import { useState } from 'react';
 
-const Product = ()=>{
+const Product = (props)=>{
+    let [total, setTotal] = useState(props.price)
     return(
-        <div className='product'>
-            <img src="https://picsum.photos/200/300" alt="" />
-            <h2>Hoodie</h2>
-            <label>Price</label><br />
-            <label>Total</label>
+        <div className='shadow product'>
+            <img src={props.img} alt="" />
+            <h2>{props.title}</h2>
+            <label>${props.price}</label><br />
+            <label>Total: ${total}</label>
             <QtyPicker></QtyPicker>
-            <button>Add</button>
+            <button className='btn btn-secondary btn-sm'>Add</button>
         </div>
     )
 }

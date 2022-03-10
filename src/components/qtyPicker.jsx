@@ -16,9 +16,9 @@ const QtyPicker = ()=>{
     return(
         <div className='flexBox'>
         <div className='qtyPicker'>
-            <button onClick={handleDec}>-</button>
-            <p>{qty}</p>
-            <button onClick={handleInc}>+</button>
+            <button className='btn btn-secondary btn-sm px-2 my-3' onClick={handleDec}>-</button>
+            <label>{qty}</label>
+            <button className='btn btn-secondary btn-sm px-2 my-3' onClick={handleInc}>+</button>
         </div>
         </div>
     )

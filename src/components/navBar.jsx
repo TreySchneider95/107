@@ -3,9 +3,9 @@ import './navBar.css'
 
 const NavBar = ()=>{
     return(
-        <div className='navBar'>
-            <h2>This is going to be the nav bar</h2>
-            </div>
+        <nav className='navbar navbar-dark bg-dark px-4'>
+            <h2>Socks-For-U</h2>
+            </nav>
     )
 }
 

@@ -2,6 +2,10 @@
     border: solid black 1px;
     margin: 18px;
     padding: 12px;
-    background-color: rgb(194, 235, 245);
+    background-color: rgb(238, 237, 230);
     border-radius: 18px;
+}
+.product img{
+    width: 200px;
+    height: 300px;
 }
