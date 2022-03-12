@@ -3,14 +3,19 @@ import QtyPicker from './qtyPicker';
 import { useState } from 'react';
 
 const Product = (props)=>{
-    let [total, setTotal] = useState(props.price)
+    let [total, setTotal] = useState(props.data.price)
+
+    const qtyChange = (qty)=>{
+        setTotal(total = Math.round((props.data.price * qty + Number.EPSILON) * 100) / 100)
+    }
+
     return(
         <div className='shadow product'>
-            <img src={props.img} alt="" />
-            <h2>{props.title}</h2>
-            <label>${props.price}</label><br />
+            <img src={props.data.image} alt="" />
+            <h2>{props.data.title}</h2>
+            <label>${props.data.price}</label><br />
             <label>Total: ${total}</label>
-            <QtyPicker></QtyPicker>
+            <QtyPicker onChange={qtyChange}></QtyPicker>
             <button className='btn btn-secondary btn-sm'>Add</button>
         </div>
     )
