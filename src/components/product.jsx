@@ -12,7 +12,7 @@ const Product = (props)=>{
     return(
         <div className='shadow product'>
             <img src={props.data.image} alt="" />
-            <h2>{props.data.title}</h2>
+            <h4>{props.data.title}</h4>
             <label>${props.data.price}</label><br />
             <label>Total: ${total}</label>
             <QtyPicker onChange={qtyChange}></QtyPicker>
