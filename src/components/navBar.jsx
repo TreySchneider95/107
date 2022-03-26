@@ -16,7 +16,7 @@ const NavBar = ()=>{
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+        <Link className="nav-link" to="/">Home</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/catalog">Catalog</Link>
@@ -26,6 +26,9 @@ const NavBar = ()=>{
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/cart">Cart</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/admin">Admin</Link>
       </li>
     </ul>
     </div>

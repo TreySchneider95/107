@@ -85,6 +85,11 @@ class DataService{
     getCatalog(){
         return catalog
     }
+    saveProduct(prod){
+        console.log('saving product')
+    }
 }
+
+
 
 export default DataService
