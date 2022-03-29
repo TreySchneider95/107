@@ -1,14 +1,30 @@
 import './product.css'
 import QtyPicker from './qtyPicker';
 import { useState } from 'react';
+import store from '../context/storeContext';
+import { useContext } from 'react';
 
 const Product = (props)=>{
+    let [quantity , setQuantity] = useState(0)
     let [total, setTotal] = useState(props.data.price)
+    let addProdToCart = useContext(store).addProdToCart
+    let removeProdFromCart = useContext(store).removeProdFromCart
 
     const qtyChange = (qty)=>{
+        setQuantity(quantity += qty)
         setTotal(total = Math.round((props.data.price * qty + Number.EPSILON) * 100) / 100)
     }
+    const addProduct = (qty)=>{
+        let cartProd = {...props.data}
+        cartProd.total = total
+        cartProd.qty = quantity
+        console.log(cartProd)
+        addProdToCart()
 
+    }
+    const removeProduct = ()=>{
+        removeProdFromCart()
+    }
     return(
         <div className='shadow product'>
             <img src={props.data.image} alt="" />
@@ -16,7 +32,7 @@ const Product = (props)=>{
             <label>${props.data.price}</label><br />
             <label>Total: ${total}</label>
             <QtyPicker onChange={qtyChange}></QtyPicker>
-            <button className='btn btn-secondary btn-sm'>Add</button>
+            <button onClick={addProduct} className='btn btn-secondary btn-sm'>Add</button>
         </div>
     )
 }

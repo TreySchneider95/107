@@ -1,8 +1,13 @@
 import './navBar.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import store from '../context/storeContext'
+import { useContext } from 'react'
+import Cart from './cart';
 
 
 const NavBar = ()=>{
+    const cart = useContext(store).cart
+
     return(
         // <nav className='navbar navbar-dark bg-dark px-4'>
         //     <h2>Socks-For-U</h2>
@@ -31,6 +36,9 @@ const NavBar = ()=>{
         <Link className="nav-link" to="/admin">Admin</Link>
       </li>
     </ul>
+    <form className='d-flex'>
+      Cart: {cart.length}
+    </form>
     </div>
 </nav>
     )

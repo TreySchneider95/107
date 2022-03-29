@@ -6,6 +6,8 @@ import DataService from '../services/dataService';
 const Admin = ()=>{
     const [prod, setProd] = useState({})
     const [coupon, setCoupon] = useState({})
+    const [allCoupon, setAllCoupon] = useState([])
+    const [allProds, setAllProds] = useState([])
 
     const handleInputChange = (e)=>{
         // console.log('text change', e.target.value, e.target.name)
@@ -25,11 +27,17 @@ const Admin = ()=>{
         console.log(prod)
         let service = new DataService()
         service.saveProduct(prod)
+        let copy = [...allProds]
+        copy.push(prod)
+        setAllProds(copy)
     }
     const submitObjectCoupon = ()=>{
         console.log(coupon)
         let service = new DataService()
         service.saveProduct(coupon)
+        let copy = [...allCoupon]
+        copy.push(coupon)
+        setAllCoupon(copy)
     }
     return(
         <div className='admin'>
@@ -73,6 +81,12 @@ const Admin = ()=>{
                 </div>
                 <button onClick={submitObjectCoupon} className='btn btn-dark'>Save Product</button>
             </section>
+            </div>
+            <div className='coupon-list'>
+                {allCoupon.map(coupon => <div key={coupon.code}><label>{coupon.code}</label> - <label>{coupon.percent}</label></div>)}
+            </div>
+            <div className='prod-list'>
+                {allProds.map(prod => <div key={prod.title}><label>{prod.title}</label></div>)}
             </div>
         </div>
     )
