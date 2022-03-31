@@ -7,6 +7,13 @@ import Cart from './cart';
 
 const NavBar = ()=>{
     const cart = useContext(store).cart
+    const getNum = ()=>{
+      let total = 0
+      for(let x = 0; x < cart.length; x ++){
+        total += cart[x].qty
+      }
+      return total
+    }
 
     return(
         // <nav className='navbar navbar-dark bg-dark px-4'>
@@ -29,15 +36,15 @@ const NavBar = ()=>{
       <li className="nav-item">
         <Link className="nav-link" to="/about">About</Link>
       </li>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <Link className="nav-link" to="/cart">Cart</Link>
-      </li>
+      </li> */}
       <li className="nav-item">
         <Link className="nav-link" to="/admin">Admin</Link>
       </li>
     </ul>
-    <form className='d-flex'>
-      Cart: {cart.length}
+    <form className='form-inline my-2 my-lg-0'>
+      <Link to='/cart' className='btn btn-outline-light'><span className='badge bg-primary'>{getNum()}</span> View Cart</Link>
     </form>
     </div>
 </nav>

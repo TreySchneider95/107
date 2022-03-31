@@ -28,7 +28,7 @@ function App() {
             <Route path='/admin' element = {<Admin/>}></Route>
           </Routes>
 
-          <Footer></Footer>
+
         </BrowserRouter>
       </GlobalState>
     </div>

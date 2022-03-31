@@ -1,0 +1,16 @@
+.cartProd{
+    width: 40%;
+    padding: 12px;
+    margin: 18px auto;
+    border: solid black 1px;
+    background-color: rgb(246, 246, 246);
+    border-radius: 18px;
+}
+.cartProd img{
+    height: 150px;
+    padding: 20px;
+}
+.cartProd h4{
+    height: 150px;
+    padding: 20px;
+}
